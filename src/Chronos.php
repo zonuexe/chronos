@@ -742,17 +742,9 @@ class Chronos extends DateTimeImmutable implements Stringable
      */
     public static function createFromTimestamp(float|int $timestamp, DateTimeZone|string|null $timezone = null): static
     {
-        if (PHP_VERSION_ID >= 80400 && $timezone === null) {
-            return parent::createFromTimestamp($timestamp);
-        }
+        $instance = PHP_VERSION_ID >= 80400 ? parent::createFromTimestamp($timestamp) : new static('@' . $timestamp);
 
-        $instance = static::now($timezone);
-
-        if (is_int($timestamp)) {
-            return $instance->setTimestamp($timestamp);
-        }
-
-        return $instance->modify('@' . $timestamp);
+        return $timezone ? $instance->setTimezone($timezone) : $instance;
     }
 
     /**

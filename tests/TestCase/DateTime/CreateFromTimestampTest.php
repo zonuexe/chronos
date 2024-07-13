@@ -24,16 +24,17 @@ class CreateFromTimestampTest extends TestCase
     public function testCreateReturnsDatingInstance()
     {
         $d = Chronos::createFromTimestamp(Chronos::create(1975, 5, 21, 22, 32, 5)->timestamp);
-        $this->assertDateTime($d, 1975, 5, 21, 22, 32, 5);
+        $this->assertDateTime($d, 1975, 5, 22, 2, 32, 5);
+        $this->assertSame('+00:00', $d->tzName);
     }
 
-    public function testCreateFromTimestampUsesDefaultTimezone()
+    public function testCreateFromTimestampUsesUTC()
     {
         $d = Chronos::createFromTimestamp(0);
 
-        // We know Toronto is -5 since no DST in Jan
-        $this->assertSame(1969, $d->year);
-        $this->assertSame(-5 * 3600, $d->offset);
+        $this->assertSame(1970, $d->year);
+        $this->assertSame(0, $d->offset);
+        $this->assertSame('+00:00', $d->tzName);
     }
 
     public function testCreateFromTimestampWithDateTimeZone()
@@ -45,9 +46,10 @@ class CreateFromTimestampTest extends TestCase
 
     public function testCreateFromTimestampWithString()
     {
-        $d = Chronos::createFromTimestamp(0, 'UTC');
-        $this->assertDateTime($d, 1970, 1, 1, 0, 0, 0);
-        $this->assertSame(0, $d->offset);
-        $this->assertSame('UTC', $d->tzName);
+        $d = Chronos::createFromTimestamp(0, 'America/Toronto');
+        // We know Toronto is -5 since no DST in Jan
+        $this->assertSame(1969, $d->year);
+        $this->assertSame(-5 * 3600, $d->offset);
+        $this->assertSame('America/Toronto', $d->tzName);
     }
 }
