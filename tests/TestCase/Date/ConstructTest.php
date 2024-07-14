@@ -20,6 +20,7 @@ use DateTime;
 use DateTimeImmutable;
 use DateTimeZone;
 use InvalidArgumentException;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 /**
  * Test constructors for Date objects.
@@ -68,9 +69,9 @@ class ConstructTest extends TestCase
     }
 
     /**
-     * @dataProvider inputTimeProvider
      * @return void
      */
+    #[DataProvider('inputTimeProvider')]
     public function testConstructWithTimeParts($time)
     {
         $date = new ChronosDate($time);
