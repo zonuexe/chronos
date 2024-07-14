@@ -36,7 +36,6 @@ jobs:
           - php-version: '8.4'
             dependencies: highest
             unstable: true
-            composer-options: "--ignore-platform-req=php"
 
     steps:
     - uses: actions/checkout@v4
