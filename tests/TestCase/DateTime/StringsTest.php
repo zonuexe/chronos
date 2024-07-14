@@ -18,6 +18,7 @@ namespace Cake\Chronos\Test\TestCase\DateTime;
 use Cake\Chronos\Chronos;
 use Cake\Chronos\Test\TestCase\TestCase;
 use DateTime;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class StringsTest extends TestCase
 {
@@ -180,9 +181,9 @@ class StringsTest extends TestCase
     /**
      * testToQuarter method
      *
-     * @dataProvider toQuarterProvider
      * @return void
      */
+    #[DataProvider('toQuarterProvider')]
     public function testToQuarter($date, $expected, $range = false)
     {
         $this->assertSame($expected, (new Chronos($date))->toQuarter($range));
@@ -206,9 +207,9 @@ class StringsTest extends TestCase
     /**
      * testToWeek method
      *
-     * @dataProvider toWeekProvider
      * @return void
      */
+    #[DataProvider('toWeekProvider')]
     public function testToWeek($date, $expected)
     {
         $this->assertSame($expected, (new Chronos($date))->toWeek());

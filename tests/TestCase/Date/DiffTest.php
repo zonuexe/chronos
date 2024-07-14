@@ -19,6 +19,7 @@ use Cake\Chronos\ChronosDate;
 use Cake\Chronos\Test\TestCase\TestCase;
 use Closure;
 use DatePeriod;
+use PHPUnit\Framework\Attributes\DataProvider;
 
 class DiffTest extends TestCase
 {
@@ -322,9 +323,9 @@ class DiffTest extends TestCase
     }
 
     /**
-     * @dataProvider diffForHumansProvider
      * @return void
      */
+    #[DataProvider('diffForHumansProvider')]
     public function testDiffForHumansRelative($now, $date, $expected)
     {
         $this->assertSame($expected, $now->diffForHumans($date));
