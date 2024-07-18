@@ -7,3 +7,7 @@ parameters:
 		- src/
 	ignoreErrors:
 		- identifier: missingType.iterableValue
+		-
+			message: "#^Call to an undefined static method DateTimeImmutable\\:\\:createFromTimestamp\\(\\)\\.$#"
+			count: 1
+			path: src/Chronos.php
