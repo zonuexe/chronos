@@ -935,7 +935,7 @@ trait ModifierTrait
     public function startOfMonth(): ChronosInterface
     {
         if (static::class === ChronosDate::class) {
-            trigger_error('2.5 startOfMonth() will be removed in 3.x.', E_USER_DEPRECATED);
+            trigger_error('2.5 startOfMonth() will be removed in 3.x. Use firstOfMonth() instead.', E_USER_DEPRECATED);
         }
 
         return $this->modify('first day of this month midnight');
@@ -949,7 +949,7 @@ trait ModifierTrait
     public function endOfMonth(): ChronosInterface
     {
         if (static::class === ChronosDate::class) {
-            trigger_error('2.5 endOfMonth() will be removed in 3.x.', E_USER_DEPRECATED);
+            trigger_error('2.5 endOfMonth() will be removed in 3.x. Use lastOfMonth() instead.', E_USER_DEPRECATED);
         }
 
         return $this->modify('last day of this month, 23:59:59');
@@ -963,7 +963,7 @@ trait ModifierTrait
     public function startOfYear(): ChronosInterface
     {
         if (static::class === ChronosDate::class) {
-            trigger_error('2.5 startOfYear() will be removed in 3.x.', E_USER_DEPRECATED);
+            trigger_error('2.5 startOfYear() will be removed in 3.x. Use firstOfYear() instead.', E_USER_DEPRECATED);
         }
 
         return $this->modify('first day of january midnight');
@@ -977,7 +977,7 @@ trait ModifierTrait
     public function endOfYear(): ChronosInterface
     {
         if (static::class === ChronosDate::class) {
-            trigger_error('2.5 endOfYear() will be removed in 3.x.', E_USER_DEPRECATED);
+            trigger_error('2.5 endOfYear() will be removed in 3.x. Use lastOfYear() instead.', E_USER_DEPRECATED);
         }
 
         return $this->modify('last day of december, 23:59:59');
