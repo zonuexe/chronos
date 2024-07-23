@@ -274,6 +274,17 @@ class AddTest extends TestCase
      * @dataProvider classNameProvider
      * @return void
      */
+    public function testAddWeeksStartOfWeek($class)
+    {
+        $this->assertSame(5, (new $class(2024, 7, 2,))->addWeeks(1)->startOfWeek()->day);
+
+        $this->assertSame(14, $class::createFromDate(2024, 7, 2,)->addWeeks(1)->endOfWeek()->day);
+    }
+
+    /**
+     * @dataProvider classNameProvider
+     * @return void
+     */
     public function testAddHoursPositive($class)
     {
         $this->assertSame(1, $class::createFromTime(0)->addHours(1)->hour);
