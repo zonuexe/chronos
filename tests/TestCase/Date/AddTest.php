@@ -135,4 +135,22 @@ class AddTest extends TestCase
         $this->assertSame(2, $class::create(1975, 5, 31)->addWeekdays(1)->day);
         $this->assertSame(30, $class::create(1975, 5, 31)->addWeekdays(-1)->day);
     }
+
+    /**
+     * @dataProvider dateClassProvider
+     * @return void
+     */
+    public function testAddWeeksStartOfWeek($class)
+    {
+        $this->assertSame(8, (new $class('2024-7-2'))->addWeeks(1)->startOfWeek()->day);
+    }
+
+    /**
+     * @dataProvider dateClassProvider
+     * @return void
+     */
+    public function testAddWeeksEndOfWeek($class)
+    {
+        $this->assertSame(14, (new $class('2024-7-2'))->addWeeks(1)->endOfWeek()->day);
+    }
 }
