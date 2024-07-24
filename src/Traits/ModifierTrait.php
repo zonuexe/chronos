@@ -1051,6 +1051,9 @@ trait ModifierTrait
         if ($dt->dayOfWeek !== static::$weekStartsAt) {
             $dt = $dt->previous(static::$weekStartsAt);
         }
+        if ($dt instanceof ChronosDate) {
+            return $dt;
+        }
 
         return $dt->startOfDay();
     }
@@ -1065,6 +1068,9 @@ trait ModifierTrait
         $dt = $this;
         if ($dt->dayOfWeek !== static::$weekEndsAt) {
             $dt = $dt->next(static::$weekEndsAt);
+        }
+        if ($dt instanceof ChronosDate) {
+            return $dt;
         }
 
         return $dt->endOfDay();
