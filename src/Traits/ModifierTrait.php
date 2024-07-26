@@ -1083,7 +1083,7 @@ trait ModifierTrait
      * to indicate the desired dayOfWeek, ex. ChronosInterface::MONDAY.
      *
      * @param int|null $dayOfWeek The day of the week to move to.
-     * @return mixed
+     * @return static
      */
     public function next(?int $dayOfWeek = null)
     {
@@ -1103,7 +1103,7 @@ trait ModifierTrait
      * to indicate the desired dayOfWeek, ex. ChronosInterface::MONDAY.
      *
      * @param int|null $dayOfWeek The day of the week to move to.
-     * @return mixed
+     * @return static
      */
     public function previous(?int $dayOfWeek = null)
     {
@@ -1123,7 +1123,7 @@ trait ModifierTrait
      * to indicate the desired dayOfWeek, ex. ChronosInterface::MONDAY.
      *
      * @param int|null $dayOfWeek The day of the week to move to.
-     * @return mixed
+     * @return static
      */
     public function firstOfMonth(?int $dayOfWeek = null)
     {
@@ -1139,7 +1139,7 @@ trait ModifierTrait
      * to indicate the desired dayOfWeek, ex. ChronosInterface::MONDAY.
      *
      * @param int|null $dayOfWeek The day of the week to move to.
-     * @return mixed
+     * @return static
      */
     public function lastOfMonth(?int $dayOfWeek = null)
     {
@@ -1156,7 +1156,7 @@ trait ModifierTrait
      *
      * @param int $nth The offset to use.
      * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
+     * @return static|false
      */
     public function nthOfMonth(int $nth, int $dayOfWeek)
     {
@@ -1174,7 +1174,7 @@ trait ModifierTrait
      * to indicate the desired dayOfWeek, ex. ChronosInterface::MONDAY.
      *
      * @param int|null $dayOfWeek The day of the week to move to.
-     * @return mixed
+     * @return static
      */
     public function firstOfQuarter(?int $dayOfWeek = null)
     {
@@ -1191,7 +1191,7 @@ trait ModifierTrait
      * to indicate the desired dayOfWeek, ex. ChronosInterface::MONDAY.
      *
      * @param int|null $dayOfWeek The day of the week to move to.
-     * @return mixed
+     * @return static
      */
     public function lastOfQuarter(?int $dayOfWeek = null)
     {
@@ -1209,7 +1209,7 @@ trait ModifierTrait
      *
      * @param int $nth The offset to use.
      * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
+     * @return static|false
      */
     public function nthOfQuarter(int $nth, int $dayOfWeek)
     {
@@ -1228,7 +1228,7 @@ trait ModifierTrait
      * to indicate the desired dayOfWeek, ex. ChronosInterface::MONDAY.
      *
      * @param int|null $dayOfWeek The day of the week to move to.
-     * @return mixed
+     * @return static
      */
     public function firstOfYear(?int $dayOfWeek = null)
     {
@@ -1244,7 +1244,7 @@ trait ModifierTrait
      * to indicate the desired dayOfWeek, ex. ChronosInterface::MONDAY.
      *
      * @param int|null $dayOfWeek The day of the week to move to.
-     * @return mixed
+     * @return static
      */
     public function lastOfYear(?int $dayOfWeek = null)
     {
@@ -1261,7 +1261,7 @@ trait ModifierTrait
      *
      * @param int $nth The offset to use.
      * @param int $dayOfWeek The day of the week to move to.
-     * @return mixed
+     * @return static|false
      */
     public function nthOfYear(int $nth, int $dayOfWeek)
     {
