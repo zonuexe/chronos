@@ -170,7 +170,7 @@ Once you have 2 instances of Chronos date/time objects you can compare them in
 a variety of ways::
 
     // Full suite of comparators exist
-    // equals,notEquals, greaterThan, greaterThanOrEquals, lessThan, lessThanOrEquals
+    // equals, notEquals, greaterThan, greaterThanOrEquals, lessThan, lessThanOrEquals
     $first->equals($second);
     $first->greaterThanOrEquals($second);
 
